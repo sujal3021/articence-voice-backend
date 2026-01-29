@@ -1,2 +1,2 @@
-# articence-voice-backend
-FastAPI backend service for Articence Voice &amp; AI Team internship
+# Articence Voice & AI Backend Internship Project
+FastAPI microservice – Packet ingestion + AI processing
