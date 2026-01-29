@@ -46,3 +46,26 @@ alembic upgrade head
 # 6. Run server
 uvicorn app.main:app --reload --port 8000
 
+
+Interactive docs: http://127.0.0.1:8000/docs
+
+Method,Endpoint,Description,Status
+POST,/v1/call/stream/{call_id},Ingest audio packet,202 Accepted
+GET,/health,Health check,200 OK
+GET,/docs,Swagger UI,200 OK
+
+
+Example request (curl)
+
+curl -X POST "http://127.0.0.1:8000/v1/call/stream/test_call_123" ^
+  -H "Content-Type: application/json" ^
+  -d "{\"sequence\":1,\"data\":\"audio_chunk_1\",\"timestamp\":1738150000.0}"
+
+Response:
+
+{"status":"accepted","call_id":"test_call_123","sequence":1}
+
+🗄️ Database Check
+
+docker compose exec -it postgres psql -U postgres -d articence_db -c "SELECT * FROM calls;"
+
