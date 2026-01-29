@@ -76,7 +76,7 @@ This design ensures high throughput, reliability despite flaky services, and cle
     http://127.0.0.1:8000/docs
     
 
-##Quick Test Example
+## Quick test example
 
 Send packets to trigger AI processing:
  
@@ -93,8 +93,7 @@ Repeat 10+ times (increase sequence) → watch logs for AI task → then check D
   docker compose exec -it postgres psql -U postgres -d articence_db -c "SELECT * FROM calls;"
   ```
 
-##Submission Note
-
+## Submission note
 This repository implements all required aspects of the FastAPI Backend Intern task.
 
 Thank you for reviewing!
