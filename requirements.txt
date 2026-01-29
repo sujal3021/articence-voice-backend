@@ -1,0 +1,25 @@
+# Core web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.6              # includes uvloop & httptools for better performance
+
+# Async PostgreSQL
+sqlalchemy[asyncio]>=2.0.35
+asyncpg>=0.29.0
+
+# Data validation & settings
+pydantic>=2.9.2
+python-dotenv>=1.0.1
+
+# Retry logic for flaky AI service
+tenacity>=9.0.0
+
+# Testing
+pytest>=8.3.3
+pytest-asyncio>=0.24.0
+httpx>=0.27.2
+
+# Optional but very useful for database migrations
+alembic>=1.13.3
+
+# For logging (already in stdlib, but good to be explicit sometimes)
+structlog>=24.4.0                      # nicer structured logs (optional)
