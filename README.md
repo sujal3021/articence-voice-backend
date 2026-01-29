@@ -41,5 +41,13 @@ This design ensures high throughput, reliability despite flaky services, and cle
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/sujal3021/articence-voice-backend.git
+   git clone https://github.com/sujal3021/articence-voice-backend.git       
    cd articence-voice-backend
+
+2. **Create and activate virtual environment**
+
+   ```bash
+   python -m venv articence-env
+   articence-env\Scripts\activate
+
+
