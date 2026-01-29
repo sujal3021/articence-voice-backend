@@ -213,3 +213,4 @@ __pycache__/
 .pytest_cache/
 venv/
 articence-env/
+*.env
