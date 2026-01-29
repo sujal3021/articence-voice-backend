@@ -50,4 +50,74 @@ This design ensures high throughput, reliability despite flaky services, and cle
    python -m venv articence-env
    articence-env\Scripts\activate
 
+3. **Install dependencies**
+ 
+   ```bash
+    pip install -r requirements.txt
+
+4. **Start PostgreSQL (Docker)**
+ 
+   ```bash
+    docker compose up -d
+
+5. **Apply database migrations**
+ 
+   ```bash
+    alembic upgrade head
+
+6. **Run the server**
+ 
+   ```bash
+    uvicorn app.main:app --reload --port 8000
+
+7. **Open interactive documentation**
+ 
+   ```bash
+    http://127.0.0.1:8000/docs
+    
+
+Quick Test Example
+
+Send packets to trigger AI processing:
+ 
+   ```bash
+   curl -X POST "http://127.0.0.1:8000/v1/call/stream/test_call_123" ^
+   -H "Content-Type: application/json" ^
+   -d "{\"sequence\":1,\"data\":\"chunk1\",\"timestamp\":1738150000.0}"
+
+Repeat 10+ times (increase sequence) → watch logs for AI task → then check DB:
+
+  ```bash
+  docker compose exec -it postgres psql -U postgres -d articence_db -c "SELECT * FROM calls;"
+
+
+Submission Note
+
+This repository implements all required aspects of the FastAPI Backend Intern task.
+
+Thank you for reviewing!
+Sujal Saha
+January 29, 2026
+
+
+SCREENSHOT
+
+## Screenshots
+
+### Swagger API Docs
+![Swagger](screenshots/docs.png)
+
+### API Request Example
+![API](screenshots/api.png)
+
+### Terminal
+![terminal](screenshots/terminal.png)
+
+
+
+
+
+
+
+
 
